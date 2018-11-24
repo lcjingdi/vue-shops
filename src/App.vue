@@ -5,9 +5,10 @@
       <h1 class="mint-header-title">头部</h1>
       <div class="mint-header-button is-right"></div>
     </header>
-    
-    <router-view></router-view>
-    
+
+    <transition>
+      <router-view></router-view>
+    </transition>
 
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item" to="/home">
@@ -47,5 +48,20 @@ export default {
 <style>
 .app-container {
   padding-top: 40px;
+  overflow-x: hidden;
+}
+
+.v-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
 }
 </style>
