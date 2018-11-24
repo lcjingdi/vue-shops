@@ -1,11 +1,13 @@
 <template>
     <div>
-        <h1>register</h1>
+        <h1>shop</h1>
     </div>
 </template>
+
 <script>
     
 </script>
-<style>
+
+<style lang="scss">
     
 </style>

@@ -1,29 +1,34 @@
 import VueRouter from 'vue-router'
 
-import account from './main/Account.vue'
-import goodlist from './main/GoodsList.vue'
-
-import login from './sub/login.vue'
-import register from './sub/register.vue'
+import HomeContainer from './components/tabbar/HomeContainer.vue'
+import MemberContainer from './components/tabbar/MemberContainer.vue'
+import ShopContainer from './components/tabbar/ShopContainer.vue'
+import SearchContainer from './components/tabbar/SearchContainer.vue'
 
 var router = new VueRouter({
     routes: [
         {
-            path: '/account',
-            component: account,
-            children: [
-                {
-                    path: 'login', component: login
-                },
-                {
-                    path: 'register', component: register
-                }
-            ]
+            path: '/',
+            redirect: '/home'
         },
         {
-            path:'/goodslist', component: goodlist
-        }
-    ]
+            path: '/home',
+            component: HomeContainer
+        },
+        {
+            path: '/member',
+            component: MemberContainer
+        },
+        {
+            path: '/shop',
+            component: ShopContainer
+        },
+        {
+            path: '/search',
+            component: SearchContainer
+        },
+    ],
+    linkActiveClass: 'mui-active'
 })
 
 export default router
