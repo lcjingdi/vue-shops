@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>shop</h1>
+        <h1 class="blue">shop</h1>
     </div>
 </template>
 
@@ -9,5 +9,7 @@
 </script>
 
 <style lang="scss">
-    
+    .blue {
+        color: blue;
+    }
 </style>

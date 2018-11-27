@@ -6,6 +6,7 @@ import ShopContainer from './components/tabbar/ShopContainer.vue'
 import SearchContainer from './components/tabbar/SearchContainer.vue'
 
 import NewsList from './components/news/newslist.vue'
+import NewsInfo from './components/news/NewsInfo.vue'
 
 var router = new VueRouter({
     routes: [
@@ -32,6 +33,10 @@ var router = new VueRouter({
         {
             path: '/home/newslist',
             component: NewsList
+        },
+        {
+            path: '/home/newsinfo/:id',
+            component: NewsInfo
         }
     ],
     linkActiveClass: 'mui-active'
