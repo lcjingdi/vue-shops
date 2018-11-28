@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="cmt-container">
         <h3>发表评论</h3>
         <hr />
         <textarea placeholder="请输入要发表的内容（做多吐槽120字）" maxlength="120"></textarea>
@@ -18,12 +18,22 @@
     </div>
 </template>
 <script>
-    
+    import {Toast} from 'mint-ui';
     export default {
         data: function(){
             return {
                 pageIndex: 1,
-                comments: []
+                comments: [
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿就拉萨快递费阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费阿递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨萨快递费阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就递费就拉萨快递就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递萨德飞机拉萨快递费阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"},
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机萨拉萨快递费就拉萨快费"}
+                ]
             }
         },
         created(){
@@ -32,25 +42,43 @@
         },
         methods: {
             getComments(){
-                this.comments = [
-                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.32", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.42", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.55", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.66", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.77", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.88", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"},
-                    {add_time: "1999.19.99", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费"}
-                    ]
+                Toast("获取评论成功---"+ this.id);
+                this.comments.push(
+                    {add_time: "1999.19.19", user_name: "jd", content:"阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快递费阿萨德飞机拉萨快递费就拉萨快费"})
             },
             getMore(){
-
+                this.pageIndex++;
+                this.getComments();
             },
-        }
+        },
+        props: ['id']
     }
     
 </script>   
 
 <style lang="scss" scoped>
-
+    .cmt-container {
+        h3 {
+            font-size: 18px;
+        }
+        textarea {
+            font-size: 14px;
+            height: 85px;
+            margin: 0;
+        }
+        .cmt-list {
+            margin: 5px 0;
+            .cmt-item {
+                font-size: 13px;
+                .cmt-title {
+                    line-height: 30px;
+                    background-color: #ccc;
+                }
+                .cmt-body {
+                    line-height: 40px;
+                    text-indent: 2em;
+                }
+            }
+        }
+    }
 </style>
