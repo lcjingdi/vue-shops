@@ -8,6 +8,10 @@ import SearchContainer from './components/tabbar/SearchContainer.vue'
 import NewsList from './components/news/newslist.vue'
 import NewsInfo from './components/news/NewsInfo.vue'
 
+import PhotoList from './components/photos/PhotoList.vue'
+
+import GoodsList from './components/goods/GoodsList.vue'
+
 var router = new VueRouter({
     routes: [
         {
@@ -37,7 +41,16 @@ var router = new VueRouter({
         {
             path: '/home/newsinfo/:id',
             component: NewsInfo
+        },
+        {
+            path: '/home/photolist',
+            component: PhotoList
+        },
+        {
+            path: '/home/goodslist',
+            component: GoodsList
         }
+
     ],
     linkActiveClass: 'mui-active'
 })
