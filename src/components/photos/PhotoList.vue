@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import mui from "../../lib/mui/js/mui.js";
+
 export default {
   data: function() {
     return {
@@ -35,10 +37,13 @@ export default {
     });
   },
   created: function() {
-    this.getAllCategory();
+    // this.getAllCategory();
   }
 };
 </script>
 
 <style lang="scss" scoped>
+* {
+  touch-action: pan-y;
+}
 </style>

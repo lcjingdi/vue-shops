@@ -1,26 +1,18 @@
 <template>
   <div>
     <ul class="mui-table-view">
-      <li
-        class="mui-table-view-cell mui-media"
-        v-for="item in newslist"
-        :key="item.id"
-      >
+      <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
         <routerLink :to="'/home/newsinfo/'+item.id">
-          <img
-            class="mui-media-object mui-pull-left"
-            v-bind:src="item.img_url"
-          >
+          <img class="mui-media-object mui-pull-left" v-bind:src="item.img_url">
           <div class="mui-media-body">
             <h1>{{item.title}}</h1>
-            <p class='mui-ellipsis'>
+            <p class="mui-ellipsis">
               <span>{{item.add_time}}</span>
               <span>点击：{{item.click}}次</span>
             </p>
           </div>
         </routerLink>
       </li>
-
     </ul>
   </div>
 </template>
