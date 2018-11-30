@@ -44,6 +44,9 @@ export default {
 </script>
 
 <style>
+.mint-header {
+  z-index: 999;
+}
 .app-container {
   padding-top: 40px;
   overflow-x: hidden;
