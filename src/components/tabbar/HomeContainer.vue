@@ -1,10 +1,6 @@
 <template>
   <div>
-    <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="item in swipsList" :key="item.url">
-        <img :src="item.url" alt="">
-      </mt-swipe-item>
-    </mt-swipe>
+    <swiper :swipsList="lunbolist" :isfull="true"></swiper>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><routerLink to="/home/newslist">
           <img src="../../images/menu1.png" alt="">
@@ -35,10 +31,11 @@
 </template>
 
 <script>
+import swiper from '../subcomponents/swiper.vue'
 export default {
   data: function() {
     return {
-      swipsList: [
+      lunbolist: [
         {
           id: 1,
           url:
@@ -72,6 +69,9 @@ export default {
   },
   methods: {
     getSwips: function() {}
+  },
+  components: {
+    swiper
   }
 };
 </script>
