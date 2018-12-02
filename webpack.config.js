@@ -13,6 +13,7 @@ module.exports = {
             filename: 'index.html'
         })
     ],
+    devServer: { disableHostCheck: true, },
     module: {
         rules: [
             {
